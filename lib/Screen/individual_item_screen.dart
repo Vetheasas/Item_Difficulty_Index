@@ -248,28 +248,39 @@ class MenuButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 2,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 0, right: 0, top: 30, bottom: 50),
-        child: ElevatedButton(
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20))),
-              elevation: MaterialStateProperty.all(10),
-              backgroundColor: MaterialStateProperty.all(
-                Color(0xFF9792bd),
+      child: ResponsiveBuilder(builder: (context, sizingInformation) {
+        return Padding(
+          padding: EdgeInsets.only(
+              left: 0,
+              right: 0,
+              top: sizingInformation.deviceScreenType == DeviceScreenType.mobile
+                  ? 30
+                  : 70,
+              bottom:
+                  sizingInformation.deviceScreenType == DeviceScreenType.mobile
+                      ? 50
+                      : 70),
+          child: ElevatedButton(
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20))),
+                elevation: MaterialStateProperty.all(10),
+                backgroundColor: MaterialStateProperty.all(
+                  Color(0xFF9792bd),
+                ),
               ),
-            ),
-            onPressed: goRoute,
-            child: Container(
-                width: 270,
-                child: Center(
-                  child: Text(
-                    buttonText,
-                    style: defaultTextStyle.copyWith(fontSize: 25),
-                  ),
-                ))),
-      ),
+              onPressed: goRoute,
+              child: Container(
+                  width: 270,
+                  child: Center(
+                    child: Text(
+                      buttonText,
+                      style: defaultTextStyle.copyWith(fontSize: 25),
+                    ),
+                  ))),
+        );
+      }),
     );
   }
 }

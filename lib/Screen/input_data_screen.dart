@@ -8,6 +8,7 @@ import 'package:item_performance/Screen/test_database_screen.dart';
 import 'package:item_performance/constant.dart';
 
 import 'package:item_performance/Components/button.dart' as menu;
+import 'package:url_launcher/url_launcher.dart';
 import 'menu/menu.dart';
 import 'dart:developer';
 import 'dart:io' show Platform;
@@ -300,6 +301,20 @@ class _InputDataState extends State<InputData> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
+                          menu.MenuButton(
+                            flex: 1,
+                            buttonText: 'Download Sample',
+                            goRoute: () async {
+                              var url = Uri.parse(
+                                  'https://drive.google.com/drive/folders/1knPWsab70Ll_8ICqrjhJJtInj5aiOYUA?usp=sharing');
+                              if (await canLaunchUrl(url)) {
+                                await launchUrl(url,
+                                    mode: LaunchMode.externalApplication);
+                              } else {
+                                throw 'Could not launch $url';
+                              }
+                            },
+                          ),
                           menu.MenuButton(
                             flex: 2,
                             buttonText: 'Tutorial',
