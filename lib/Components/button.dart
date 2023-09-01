@@ -4,7 +4,7 @@ import 'package:item_performance/constant.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:item_performance/Model/item_model.dart';
-import 'package:item_performance/Screen/item_difficulty_list_screen/item_performance_screen.dart';
+import 'package:item_performance/Screen/item_difficulty_list_screen/item_difficulty_screen.dart';
 import 'package:intl/intl.dart';
 import 'package:item_performance/Data/list_data.dart' as data;
 import 'package:provider/provider.dart';
@@ -130,7 +130,7 @@ class TestButton extends StatelessWidget {
     Navigator.push(
         context,
         MaterialPageRoute<bool>(
-            builder: (context) => ItemPerformanceScreen(
+            builder: (context) => ItemDifficultyScreen(
                   testName: testName,
                 ))).then((bool? res) {
       // check here if you got your data or not

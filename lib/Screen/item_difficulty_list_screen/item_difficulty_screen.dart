@@ -16,17 +16,17 @@ import 'package:item_performance/Data/load_data.dart';
 import 'package:item_performance/DataBase/database_helper.dart';
 import 'dart:io' show Platform;
 
-class ItemPerformanceScreen extends StatefulWidget {
+class ItemDifficultyScreen extends StatefulWidget {
   late String testName;
-  ItemPerformanceScreen({required this.testName});
+  ItemDifficultyScreen({required this.testName});
   @override
-  State<ItemPerformanceScreen> createState() => _ItemPerformanceScreenState();
+  State<ItemDifficultyScreen> createState() => _ItemDifficultyScreenState();
 }
 
 ProcessingItem process = ProcessingItem();
 bool isProcessed = false;
 
-class _ItemPerformanceScreenState extends State<ItemPerformanceScreen> {
+class _ItemDifficultyScreenState extends State<ItemDifficultyScreen> {
   List<Widget> itemPerformance = [];
   void loadData() async {
     DatabaseHelper.instance.getTestTableName(widget

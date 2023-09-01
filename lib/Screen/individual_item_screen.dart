@@ -179,7 +179,7 @@ class _IItemScreenState extends State<IItemScreen> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child: Transform.scale(
-                        scale: 1.4,
+                        scale: 1.2,
                         child: itemQualityImage(),
                       ),
                     ),
@@ -230,7 +230,7 @@ class _IItemScreenState extends State<IItemScreen> {
                           // widget.itemPerformanceIndex.removeAt(widget.itemIndex);
                         },
                       )
-                    : Container(), //TODO: add remove Item button/ function here
+                    : Container(),
               ],
             ),
           ),

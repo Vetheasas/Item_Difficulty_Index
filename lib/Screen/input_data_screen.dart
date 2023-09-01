@@ -73,7 +73,7 @@ class _InputDataState extends State<InputData> {
     };
     dbHelper.create();
     if ((await dbHelper.queryRowCount())! < numberOfItems) {
-      await dbHelper.insert(row, numberOfItems);
+      await dbHelper.insert(row);
     }
     print('Inserted date is $testDate');
     print('Inserted idi is $idi');

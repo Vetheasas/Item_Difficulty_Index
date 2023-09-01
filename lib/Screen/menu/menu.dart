@@ -5,13 +5,12 @@ import 'package:item_performance/DataBase/database_helper.dart';
 import 'package:item_performance/Screen/input_data_screen.dart';
 import 'package:item_performance/Screen/test_database_screen.dart';
 import 'package:item_performance/constant.dart';
-import '../item_difficulty_list_screen/item_performance_screen.dart';
-import '../change_screen.dart';
+
 import 'package:item_performance/Components/button.dart' as menu;
 import 'package:item_performance/Data/list_data.dart';
 import 'package:provider/provider.dart';
 import 'package:item_performance/Function/item_processing.dart';
-import 'package:sqflite/sql.dart';
+
 import 'package:item_performance/Model/test_model.dart';
 import 'package:item_performance/Components/button.dart';
 import 'package:shared_preferences/shared_preferences.dart';

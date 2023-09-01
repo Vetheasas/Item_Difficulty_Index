@@ -252,7 +252,7 @@ class DatabaseHelper {
   // Inserts a row in the database where each key in the Map is a column name
   // and the value is the column value. The return value is the id of the
   // inserted row.
-  Future<int> insert(Map<String, dynamic> row, int numberOfItem) async {
+  Future<int> insert(Map<String, dynamic> row) async {
     Database db = await instance.database; // name/get/call the database db
 
     // return db.rawInsert(
